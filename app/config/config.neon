@@ -16,7 +16,7 @@ session:
 
 
 database:
-	dsn: 'mysql:host=127.0.0.1;dbname=nette-test'
+	dsn: 'pgsql:host=127.0.0.1;port=5432;dbname=nette-test'
 	user: root
 	password:
 	options:
