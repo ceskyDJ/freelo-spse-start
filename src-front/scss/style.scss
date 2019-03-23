@@ -1,0 +1,20 @@
+body {
+
+}
+
+.comment {
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.container {
+    &--w1440 {
+        width: 1440px;
+        max-width: 100%;
+    }
+}
+
+.list-decimal {
+    list-style: decimal;
+}

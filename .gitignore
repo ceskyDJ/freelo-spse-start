@@ -8,3 +8,4 @@ app/config/config.local.neon
 
 # Vlastni pridavky
 vendor/
+node_modules/
