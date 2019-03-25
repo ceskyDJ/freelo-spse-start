@@ -19,4 +19,9 @@ $configurator->addConfig(__DIR__ . '/config/config.local.neon');
 
 $container = $configurator->createContainer();
 
+/* @var $dateTimeFormat h4kuna\DateFilter\DateTimeFormat */
+$dateTimeFormat = $container->getService('dateFilterExtension.dateTimeFormat');
+$dateTimeFormat->setFormatsGroup('cs'); // TODO: Automatické určení jazyka
+$dateTimeFormat->setDayMonthGroup('cs'); // TODO: Automatické určení jazyka
+
 return $container;
