@@ -1,11 +1,21 @@
-# Puvodni zaznamy
+# Docastne soubory a logy
 log/
+*.log
 temp/
+
+# Konfiguracni soubory
+# Povoleni konfiguracnich souboru v korenovem adresari
 !.gitignore
 !.htaccess
 !web.config
+
+# Zakaz lokalnich konfiguracnich souboru
 app/config/config.local.neon
 
-# Vlastni pridavky
+# Stazene balicky balickovacich systemu
 vendor/
 node_modules/
+
+# Ostatni
+other/
+/Notes.txt
