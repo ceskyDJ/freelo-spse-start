@@ -3,7 +3,7 @@
 	"description": "The sandbox is a pre-packaged Nette Framework project, basic configured structure for your application.",
 	"homepage": "https://nette.org",
 	"type": "project",
-	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "David Grudl",
@@ -12,10 +12,14 @@
 		{
 			"name": "Nette Community",
 			"homepage": "https://nette.org/contributors"
+		},
+		{
+			"name": "Michal ŠMAHEL",
+			"homepage": "https://www.ceskydj.cz"
 		}
 	],
 	"require": {
-		"php": ">=5.6.0",
+		"php": ">=7.2",
 		"nette/application": "^2.4.4",
 		"nette/bootstrap": "^2.4.3",
 		"nette/caching": "^2.5",
