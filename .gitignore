@@ -13,7 +13,7 @@ temp/
 app/config/config.local.neon
 
 # Stazene balicky balickovacich systemu
-vendor/
+!vendor/*
 node_modules/
 
 # Ostatni
