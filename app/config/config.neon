@@ -2,6 +2,10 @@
 # WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
 # https://nette.org/security-warning
 #
+includes:
+    # Doplňky
+    - extensions/dateFilterExtension.neon
+
 parameters:
 
 
@@ -33,66 +37,3 @@ services:
 extensions:
     # https://github.com/h4kuna/date-filter
     dateFilterExtension: h4kuna\DateFilter\DI\DateFilterExtension
-
-dateFilterExtension:
-    formats:
-        cs:
-            day: D
-            date: j. n. Y
-            wordDate: j. F Y
-            dateTime: j. n. Y H:i:s
-        en-us:
-            day: D
-            date: d/m/Y
-            wordDate: 'F j, Y'
-            dateTime: d/m/Y H:i:s
-    dayMonth:
-        cs:
-            # days:
-            l: # long
-                Monday: Pondělí
-                Tuesday: Úterý
-                Wednesday: Středa
-                Thursday: Čtvrtek
-                Friday: Pátek
-                Saturday: Sobota
-                Sunday: Neděle
-
-            D: # short
-                Mon: Po
-                Tue: Út
-                Wed: St
-                Thu: Čt
-                Fri: Pá
-                Sat: So
-                Sun: Ne
-
-            # months:
-            F: # long
-                January: ledna
-                February: února
-                March: března
-                April: dubna
-                May: května
-                June: června
-                July: července
-                August: sprna
-                September: září
-                October: října
-                November: listopadu
-                December: prosince
-
-            M: # short
-                Jan: Led
-                Feb: Úno
-                Mar: Bře
-                Apr: Dub
-                May: Kvě
-                Jun: Čvn
-                Jul: Čvc
-                Aug: Srp
-                Sep: Zář
-                Oct: Říj
-                Nov: Lis
-                Dec: Pro
-        en-us: []
