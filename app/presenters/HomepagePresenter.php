@@ -4,26 +4,22 @@ namespace App\Presenters;
 
 use Nette;
 use App;
+use app\forms\AddCommentFormFactory;
 use Nette\Application\UI\Form;
 
 final class HomepagePresenter extends BasePresenter
 {
 
-	/**
-	 * @var Nette\Database\Context
-	 */
+	/** @var Nette\Database\Context */
 	private $database;
-	/**
-	 * @var App\Forms\FormFactory
-	 */
-	private $formFactory;
+	/** @var AddCommentFormFactory */
+	private $addCommentFormFactory;
 
-	public function __construct(Nette\Database\Context $database, App\Forms\FormFactory $formFactory)
+	public function __construct(Nette\Database\Context $database, AddCommentFormFactory $addCommentFormFactory)
 	{
 		$this->database = $database;
-		$this->formFactory = $formFactory;
+		$this->addCommentFormFactory = $addCommentFormFactory;
 	}
-
 
 	public function renderDefault()
 	{
@@ -36,12 +32,7 @@ final class HomepagePresenter extends BasePresenter
 
 	protected function createComponentCommentForm()
 	{
-		$form = $this->formFactory->create();
-
-		$form->addTextArea('message')
-			->setRequired();
-
-		$form->addSubmit('send');
+		$form = $this->addCommentFormFactory->create();
 
 		$form->onSuccess[] = [$this, 'commentFormSucceeded'];
 

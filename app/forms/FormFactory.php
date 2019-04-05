@@ -11,11 +11,14 @@ final class FormFactory
 	use Nette\SmartObject;
 
 	/**
-	 * @return Form
+	 * Vytvoří obecný formulář
+	 *
+	 * @return Form Obecný formulář
 	 */
 	public function create()
 	{
 		$form = new Form;
+
 		return $form;
 	}
 }
