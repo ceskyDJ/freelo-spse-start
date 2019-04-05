@@ -34,7 +34,9 @@ final class HomepagePresenter extends BasePresenter
 	{
 		$form = $this->addCommentFormFactory->create();
 
-		$form->onSuccess[] = [$this, 'commentFormSucceeded'];
+		$form->onSuccess[] = function(Form $form, \stdClass $values) {
+			$this->commentFormSucceeded($form, $values);
+		};
 
 		return $form;
 	}
