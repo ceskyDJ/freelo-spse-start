@@ -1,6 +1,6 @@
 {**
- * @param $task Otevřený úkol
- * @param $comments Komentáře
+ * @param Task $task Otevřený úkol
+ * @param array $comments Komentáře
  *}
 
 {block content}
@@ -17,17 +17,17 @@
                 <div class="bg-white rounded shadow p-2 p-sm-3 p-md-5">
                     <div class="form-group form-check h5 mb-4 mb-sm-5">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">{$task->title} <span class="badge badge-primary badge-pill">{$task->created_at|wordDate}</span> <img src="{$basePath}/images/avatar{$task->author}.png" class="rounded-circle" style="width:1.3rem" alt="..."> <span class="badge badge-secondary badge-pill">{$task->author->nick}</span></label>
+                        <label class="form-check-label" for="exampleCheck1">{$task->getTitle()} <span class="badge badge-primary badge-pill">{$task->getCreatedAt()|wordDate}</span> <img src="{$basePath}/images/avatar{$task->getAuthor()->getUserId()}.png" class="rounded-circle" style="width:1.3rem" alt="..."> <span class="badge badge-secondary badge-pill">{$task->getAuthor()->getNick()}</span></label>
                     </div>
 
                     {foreach $comments as $comment}
                     <div class="d-flex mb-3">
                         <div class="flex-shrink-0">
-                            <img src="{$basePath}/images/avatar{$comment->author}.png" class="mr-3 rounded-circle" style="width:3rem" alt="...">
+                            <img src="{$basePath}/images/avatar{$comment->getAuthor()->getUserId()}.png" class="mr-3 rounded-circle" style="width:3rem" alt="...">
                         </div>
                         <div class="bg-light p-2 p-sm-3 rounded flex-fill comment">
-                            <h5 class="mt-0">{$comment->author->nick}</h5>
-                            <p>{$comment->message}</p>
+                            <h5 class="mt-0">{$comment->getAuthor()->getNick()}</h5>
+                            <p>{$comment->getMessage()}</p>
                         </div>
                     </div>
                     {/foreach}

@@ -33,7 +33,11 @@ services:
     - App\Forms\AddCommentFormFactory
     - App\Forms\SignInFormFactory
     - App\Forms\SignUpFormFactory
+    - App\Repository\DBCommentRepository
+    - App\Repository\DBTaskRepository
+    - App\Repository\DBUserRepository
     router: App\RouterFactory::createRouter
+
 
 extensions:
     # https://github.com/h4kuna/date-filter
